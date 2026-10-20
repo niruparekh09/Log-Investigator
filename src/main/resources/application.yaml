@@ -1,3 +1,14 @@
 spring:
   application:
     name: log-investigator
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:3b
+        options:
+          temperature: 0.2
+
+server:
+  port: 8080
