@@ -3,12 +3,20 @@ spring:
     name: log-investigator
 
   ai:
+    retry:
+      max-attempts: 1
+
     ollama:
-      base-url: http://localhost:11434
+      base-url: http://127.0.0.1:11434
       chat:
         model: qwen2.5:3b
         options:
           temperature: 0.2
+
+  http:
+    clients:
+      connect-timeout: 5s
+      read-timeout: 90s
 
 server:
   port: 8080
